@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Display";
+  font-style: normal;
+  src: url("./PlayfairDisplay-VariableFont_wght.woff") format("woff");
+}
+
+@font-face {
+  font-family: "OpensansB";
+  font-weight: 700;
+  src: url("./OpenSans-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "OpensansR";
+  font-weight: 400;
+  src: url("./OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "OpensansL";
+  font-weight: 300;
+  src: url("./OpenSans-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NanumR";
+  font-weight: 400;
+  src: url("./NanumSquareRoundR.woff") format("woff");
+}
+@font-face {
+  font-family: "NanumB";
+  font-weight: 400;
+  src: url("./NanumSquareRoundB.woff") format("woff");
+}
+@font-face {
+  font-family: "NanumEB";
+  font-weight: 800;
+  src: url("./NanumSquareRoundEB.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Glamore";
+  src: url("./Glamore.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Rosehot";
+  src: url("./Rosehot.woff") format("woff");
+}
