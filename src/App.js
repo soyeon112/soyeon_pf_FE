@@ -28,7 +28,7 @@ function Inner() {
       {!(locationPath == "/admin/login") ? <Header /> : ""}
 
       <Routes>
-        <Route path="/portfolio_sy" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/admin" element={<AdminMain />} />
