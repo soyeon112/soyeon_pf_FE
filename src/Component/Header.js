@@ -77,7 +77,7 @@ function Header() {
     <>
       <Header_Wrap>
         <Logo_Wrap>
-          <Link to="/portfolio_sy">
+          <Link to="/">
             <Logo />
           </Link>
         </Logo_Wrap>
