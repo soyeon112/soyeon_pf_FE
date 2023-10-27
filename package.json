@@ -44,6 +44,6 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://soyeon-portfolio.netlify.app/",
+  "homepage": "https://soyeon-portfolio.netlify.app/portfolio_sy",
   "proxy": "http://localhost:8800"
 }
