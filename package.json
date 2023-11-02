@@ -44,6 +44,6 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://soyeon-portfolio.netlify.app/",
+  "homepage": "https://web-soyeon-pf-fe-12fhqa2llodtr1bj.sel5.cloudtype.app/",
   "proxy": "http://localhost:8000"
 }
