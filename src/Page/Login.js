@@ -133,7 +133,7 @@ function Login() {
       e.preventDefault();
       try {
         await axios.post(
-          `/login`,
+          `/api/login`,
           {
             userId,
             pw,
@@ -174,7 +174,7 @@ function Login() {
             {/* </Link> */}
           </LoginItem>
         </LoginBox>
-        <Link to="/portfolio_sy" className="iconHome">
+        <Link to="/" className="iconHome">
           <HiHome />
         </Link>
       </Wrap>

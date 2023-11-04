@@ -112,16 +112,16 @@ function Readmore_photo({ imgArr }) {
       <ScreenImgDiv>
         <BigImgDiv>
           {saveImg ? (
-            <BigImg src={`/image/${saveImg}`} />
+            <BigImg src={`/api/image/${saveImg}`} />
           ) : (
-            <BigImg src={`image/${imgArr[0]}`} />
+            <BigImg src={`/api/image/${imgArr[0]}`} />
           )}
         </BigImgDiv>
         <SmallImgDiv_scroll>
           <SmallImgDiv>
             {imgArr.map((it) => (
               <SmallImg
-                src={`image/${it}`}
+                src={`/api/image/${it}`}
                 key={it.id}
                 onClick={() => setSaveImg(it)}
               />

@@ -122,7 +122,7 @@ function Update2({ ...props }) {
     const fecthProjectText = async () => {
       console.log("pj111", project);
       try {
-        const res = await axios.get(`/getTexts/` + projectId);
+        const res = await axios.get(`/api/getTexts/` + projectId);
         console.log("불러옴/", res.data);
         setProject(res.data[0]);
         console.log("???", project);
@@ -175,7 +175,7 @@ function Update2({ ...props }) {
           );
           //알림창의 확인버튼 클릭시 조건문 작동
           if (addConfirm) {
-            const res = await axios.put(`/update/` + projectId, project);
+            const res = await axios.put(`/api/update/` + projectId, project);
             alert("수정되었습니다.");
             //프로젝트 등록이 완료되면 contetns로 화면이동
             document.location.href = "/projects";

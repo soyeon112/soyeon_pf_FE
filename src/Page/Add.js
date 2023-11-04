@@ -166,8 +166,11 @@ function Add() {
               console.log("aa", project[data]);
               formData.append(data, project[data]);
             }
-            const res = await axios.post(`/add/project`, formData, {
-              headers: { "Content-Type": "multipart/form-data" },
+            const res = await axios.post(`/api/add/project`, formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+                withCredentials: true,
+              },
             });
             console.log("test add >>> ", res);
             alert("등록되었습니다.");

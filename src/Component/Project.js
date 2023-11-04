@@ -169,7 +169,7 @@ function Project(props) {
     <>
       <Div>
         <ThumbDiv>
-          <Thumb src={`/image/${props.thumb}`} alt="project thumbnail" />
+          <Thumb src={`/api/image/${props.thumb}`} alt="project thumbnail" />
         </ThumbDiv>
         <TextDiv>
           <Title>{props.title}</Title>

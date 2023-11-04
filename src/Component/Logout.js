@@ -38,9 +38,9 @@ const LogoutBtn = styled.button`
 
 const handleClick_Logout = async (e) => {
   try {
-    await axios.post(`/logout`, { withCredentials: true });
+    await axios.post(`/api/logout`, { withCredentials: true });
     //로그아웃 되면 프로젝트 목록 페이지로 이동
-    document.location.href = "/portfolio_sy";
+    document.location.href = "/";
   } catch (err) {
     console.log("로그아웃 에러", err);
   }

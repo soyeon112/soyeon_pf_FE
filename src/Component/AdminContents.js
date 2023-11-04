@@ -88,7 +88,7 @@ function AdminContents(props) {
     );
     if (delConfirm) {
       try {
-        await axios.delete(`/delete/` + id);
+        await axios.delete(`/api/delete/` + id);
         window.location.reload();
       } catch (err) {
         console.log(err);
@@ -102,7 +102,7 @@ function AdminContents(props) {
     <>
       <Contents>
         <ImgWrap
-          thumb={`/image/${props.thumb}`}
+          thumb={`/api/image/${props.thumb}`}
           onClick={() => setIsOpen(true)}
         />
         <Title>{props.title}</Title>
