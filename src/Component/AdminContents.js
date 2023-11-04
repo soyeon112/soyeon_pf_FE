@@ -88,7 +88,9 @@ function AdminContents(props) {
     );
     if (delConfirm) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API}/delete/` + id);
+        await axios.delete(`${process.env.REACT_APP_API}/delete/` + id, {
+          withCredentials: true,
+        });
         window.location.reload();
       } catch (err) {
         console.log(err);

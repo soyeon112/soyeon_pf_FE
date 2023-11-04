@@ -157,7 +157,8 @@ function Readmore({ ...props }) {
       console.log("readmore page open");
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API}/getTexts/` + projectId
+          `${process.env.REACT_APP_API}/getTexts/` + projectId,
+          { withCredentials: true }
         );
         setProjectData(res.data);
       } catch (err) {

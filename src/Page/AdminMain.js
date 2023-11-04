@@ -105,7 +105,9 @@ function AdminMain(props) {
     //프로젝트 목록 가져오기
     const fecthAllProject = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API}/projects`);
+        const res = await axios.get(`${process.env.REACT_APP_API}/projects`, {
+          withCredentials: true,
+        });
         setProject(res.data);
         console.log("project 1", project);
       } catch (err) {

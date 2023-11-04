@@ -45,7 +45,9 @@ function Projects() {
   useEffect(() => {
     const fecthAllProject = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API}/projects`);
+        const res = await axios.get(`${process.env.REACT_APP_API}/projects`, {
+          withCredentials: true,
+        });
         setProject(res.data);
         console.log("project", project);
       } catch (err) {

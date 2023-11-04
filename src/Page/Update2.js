@@ -122,7 +122,8 @@ function Update2({ ...props }) {
     const fecthProjectText = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API}/getTexts/` + projectId
+          `${process.env.REACT_APP_API}/getTexts/` + projectId,
+          { withCredentials: true }
         );
         setProject(res.data[0]);
       } catch (err) {
@@ -174,7 +175,8 @@ function Update2({ ...props }) {
           if (addConfirm) {
             const res = await axios.put(
               `${process.env.REACT_APP_API}/update/` + projectId,
-              project
+              project,
+              { withCredentials: true }
             );
             alert("수정되었습니다.");
             //프로젝트 등록이 완료되면 contetns로 화면이동
