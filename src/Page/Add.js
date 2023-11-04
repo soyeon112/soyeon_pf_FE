@@ -166,12 +166,16 @@ function Add() {
               console.log("aa", project[data]);
               formData.append(data, project[data]);
             }
-            const res = await axios.post(`/api/add/project`, formData, {
-              headers: {
-                "Content-Type": "multipart/form-data",
-                withCredentials: true,
-              },
-            });
+            const res = await axios.post(
+              `${process.env.REACT_APP_API}/add/project`,
+              formData,
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                  withCredentials: true,
+                },
+              }
+            );
             console.log("test add >>> ", res);
             alert("등록되었습니다.");
             //프로젝트 등록이 완료되면 contetns로 화면이동

@@ -120,20 +120,17 @@ function Update2({ ...props }) {
   useEffect(() => {
     //id에 해당하는 프로젝트 텍스트 가져오기
     const fecthProjectText = async () => {
-      console.log("pj111", project);
       try {
-        const res = await axios.get(`/api/getTexts/` + projectId);
-        console.log("불러옴/", res.data);
+        const res = await axios.get(
+          `${process.env.REACT_APP_API}/getTexts/` + projectId
+        );
         setProject(res.data[0]);
-        console.log("???", project);
       } catch (err) {
         console.log(err);
       }
     };
     fecthProjectText();
   }, []);
-
-  console.log("update2 > ", project);
 
   //이미지 전송을 위한 폼데이터 객체 생성
   const formData = new FormData();
@@ -175,7 +172,10 @@ function Update2({ ...props }) {
           );
           //알림창의 확인버튼 클릭시 조건문 작동
           if (addConfirm) {
-            const res = await axios.put(`/api/update/` + projectId, project);
+            const res = await axios.put(
+              `${process.env.REACT_APP_API}/update/` + projectId,
+              project
+            );
             alert("수정되었습니다.");
             //프로젝트 등록이 완료되면 contetns로 화면이동
             document.location.href = "/projects";

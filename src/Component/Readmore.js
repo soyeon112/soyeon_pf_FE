@@ -156,7 +156,9 @@ function Readmore({ ...props }) {
     const fecthProjectText = async () => {
       console.log("readmore page open");
       try {
-        const res = await axios.get(`/api/getTexts/` + projectId);
+        const res = await axios.get(
+          `${process.env.REACT_APP_API}/getTexts/` + projectId
+        );
         setProjectData(res.data);
       } catch (err) {
         console.log("readmore err >", err);

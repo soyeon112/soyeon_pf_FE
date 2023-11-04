@@ -133,7 +133,7 @@ function Login() {
       e.preventDefault();
       try {
         await axios.post(
-          `/api/login`,
+          `${process.env.REACT_APP_API}/login`,
           {
             userId,
             pw,

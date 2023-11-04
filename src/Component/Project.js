@@ -169,7 +169,10 @@ function Project(props) {
     <>
       <Div>
         <ThumbDiv>
-          <Thumb src={`/api/image/${props.thumb}`} alt="project thumbnail" />
+          <Thumb
+            src={`${process.env.REACT_APP_API}/image/${props.thumb}`}
+            alt="project thumbnail"
+          />
         </ThumbDiv>
         <TextDiv>
           <Title>{props.title}</Title>

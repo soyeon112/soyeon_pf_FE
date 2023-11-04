@@ -55,7 +55,9 @@ function Header() {
   useEffect(() => {
     const getSession = async () => {
       try {
-        const res = await axios.get(`/api/session`, { withCredentials: true });
+        const res = await axios.get(`${process.env.REACT_APP_API}/session`, {
+          withCredentials: true,
+        });
         console.log(res.data);
         console.log("헤더 > 세션 확인", res.data.userId);
         //로그인 여부에 따라 로그아웃 버튼 on/off
