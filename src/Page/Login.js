@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { HiHome } from "react-icons/hi";
@@ -132,14 +132,12 @@ function Login() {
     if (userId && pw) {
       e.preventDefault();
       try {
-        await axios.post(
-          `${process.env.REACT_APP_API}/login`,
-          {
-            userId,
-            pw,
-          },
-          { withCredentials: true }
-        );
+        await axios.post(`${process.env.REACT_APP_API}/login`, {
+          withCredentials: true,
+
+          userId,
+          pw,
+        });
         //로그인이 되면 관리자 페이지 - 메인
         document.location.href = "/admin";
       } catch (err) {

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Reset } from "styled-reset";
 import Main from "./Page/Main";
@@ -21,11 +22,37 @@ function Inner() {
   //현재 주소 가져오기
   const location = useLocation();
   const locationPath = location.pathname;
+
+  //로그인 여부 확인 (11.05)
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    getSession();
+  }, [locationPath]);
+
+  const getSession = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API}/login/success`,
+        {
+          withCredentials: true,
+        }
+      );
+      if (res.data.user) {
+        setIsLogin(true);
+      } else {
+        setIsLogin(false);
+      }
+    } catch (err) {
+      console.log(" FE App.js > get sseion", err);
+    }
+  };
+  console.log("is Login", isLogin);
+
   return (
     <>
       <Reset />
       {/* 로그인 페이지에서만 헤더 안보이게, 이외 페이지에서는 헤더 보이게 */}
-      {!(locationPath == "/admin/login") ? <Header /> : ""}
+      {!(locationPath == "/admin/login") ? <Header isLogin={isLogin} /> : ""}
 
       <Routes>
         <Route path="/" element={<Main />} />
@@ -36,7 +63,6 @@ function Inner() {
         <Route path="/admin/update/:id" element={<Update />} />
         <Route path="/admin/login" element={<Login />} />
       </Routes>
-      {/* <Footer /> */}
     </>
   );
 }

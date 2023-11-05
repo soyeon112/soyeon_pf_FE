@@ -33,27 +33,8 @@ const Nav_Item = styled.button`
   }
 `;
 function Nav2(props) {
-  // const fecthLoginSession = async (e) => {
-  //   console.log("nav2 > admin click");
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.get(`/session`, { withCredentials: true });
-  //     console.log("login session res : ", res);
-  //     if (!res.data["userId"]) {
-  //       //세션이 없다면 로그인 페이지로 이동
-  //       document.location.href = "/admin/login";
-  //     } else {
-  //       //세션이 있다면 관리자 메인으로 이동
-  //       document.location.href = "/admin";
-  //     }
-  //   } catch (err) {
-  //     console.log("admin session err : ", err);
-  //   }
-  // };
-
-  const isSession = () => {
-    console.log("헤더에서 props로 받은 session state값 확인 > ", props.session);
-    if (props.session) {
+  const isLogin = () => {
+    if (props.isLogin) {
       //세션이 있다면 관리자 메인으로 이동
       document.location.href = "/admin";
     } else {
@@ -71,7 +52,7 @@ function Nav2(props) {
           <Nav_Item>PROJECTS</Nav_Item>
         </Link>
         <Link>
-          <Nav_Item onClick={isSession}>ADMIN</Nav_Item>
+          <Nav_Item onClick={isLogin}>ADMIN</Nav_Item>
         </Link>
       </Nav_Inner>
     </Nav_Wrap>

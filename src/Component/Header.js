@@ -50,30 +50,30 @@ const Logout_Wrap = styled.div`
     right: 15px;
   }
 `;
-function Header() {
+function Header({ ...props }) {
   const [session, setSession] = useState(false);
-  useEffect(() => {
-    const getSession = async () => {
-      try {
-        const res = await axios.get(`${process.env.REACT_APP_API}/session`, {
-          withCredentials: true,
-        });
-        console.log(res.data);
-        console.log("헤더 > 세션 확인", res.data.userId);
-        //로그인 여부에 따라 로그아웃 버튼 on/off
-        if (res.data.userId != undefined) {
-          setSession(true);
-          console.log("헤더 > state 세션 값", session);
-        } else {
-          setSession(false);
-          console.log("헤더 > state 세션 값2", session);
-        }
-      } catch (err) {
-        console.log("헤더에서 세션 유무 확인중 에러", err);
-      }
-    };
-    getSession();
-  }, []);
+  // useEffect(() => {
+  //   const getSession = async () => {
+  //     try {
+  //       const res = await axios.get(`${process.env.REACT_APP_API}/session`, {
+  //         withCredentials: true,
+  //       });
+  //       console.log(res.data);
+  //       console.log("헤더 > 세션 확인", res.data.userId);
+  //       //로그인 여부에 따라 로그아웃 버튼 on/off
+  //       if (res.data.userId != undefined) {
+  //         setSession(true);
+  //         console.log("헤더 > state 세션 값", session);
+  //       } else {
+  //         setSession(false);
+  //         console.log("헤더 > state 세션 값2", session);
+  //       }
+  //     } catch (err) {
+  //       console.log("헤더에서 세션 유무 확인중 에러", err);
+  //     }
+  //   };
+  //   getSession();
+  // }, []);
 
   return (
     <>
@@ -84,9 +84,9 @@ function Header() {
           </Link>
         </Logo_Wrap>
         {/* 로그인 여부에 따라 로그아웃 버튼 on/off */}
-        {session ? <Logout /> : ""}
+        {props.isLogin ? <Logout /> : ""}
 
-        <Nav2 session={session} />
+        <Nav2 isLogin={props.isLogin} />
       </Header_Wrap>
     </>
   );
