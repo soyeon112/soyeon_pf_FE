@@ -10,7 +10,6 @@ const Contents = styled.div`
   height: 300px;
   margin: 15px;
   border: #ececec 1px solid;
-  /* border: 1px solid #738af3; */
   background-color: #fff;
   padding: 15px;
   box-sizing: border-box;
