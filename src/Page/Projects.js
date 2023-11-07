@@ -19,7 +19,7 @@ const Wrap = styled.div`
     width: 90%;
   }
   @media (max-width: 500px) {
-    width: 90%;
+    width: 100%;
   }
   .addBtn {
     font-size: 35px;
