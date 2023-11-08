@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { isElementOfType } from "react-dom/test-utils";
 
 // 어드민 > 로그인 페이지 입니다.
 
@@ -128,25 +129,30 @@ function Login() {
   const [userId, setUserId] = useState("");
   const [pw, setPw] = useState("");
 
+  // 11/08 로그인 여부 확인 코드 수정
   const handleClick = async (e) => {
     if (userId && pw) {
       e.preventDefault();
       try {
-        await axios.post(
-          `${process.env.REACT_APP_API}/login`,
-          { withCredentials: true },
-          {
-            userId,
-            pw,
-          }
-        );
-        //로그인이 되면 관리자 페이지 - 메인
-        document.location.href = "/admin";
+        await axios
+          .post(`${process.env.REACT_APP_API}/login`, {
+            data: { userId, pw },
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.status);
+            if (res.status == 200) {
+              console.log("로그인 성공");
+              document.location.href = "/admin";
+            } else {
+              alert("틀렸어요. 아이디와 비밀번호를 다시 확인해주세요.");
+            }
+          });
       } catch (err) {
         console.log("login err : ", err);
       }
     } else {
-      alert("빈칸있네요! 아이디와 비밀번호를 모두 입력해주세요.");
+      alert("빈칸이 있네요. 아이디와 비밀번호를 모두 입력해주세요.");
     }
   };
 
@@ -169,9 +175,7 @@ function Login() {
               name="pw"
               onChange={(e) => setPw(e.target.value)}
             />
-            {/* <Link to="/admin"> */}
             <LoginBtn onClick={handleClick}>Log in</LoginBtn>
-            {/* </Link> */}
           </LoginItem>
         </LoginBox>
         <Link to="/" className="iconHome">
