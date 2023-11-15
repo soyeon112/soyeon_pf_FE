@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Route } from "react-router-dom";
 
 //헤더 > 네비게이션 입니다. (프로필, 프로젝트, 어드민)
 
@@ -28,10 +29,12 @@ const Nav_Item = styled.button`
   background-color: #fff;
   font-family: "Rosehot";
   font-size: 0.9rem;
+  color: #000;
   &:hover {
     color: #e64f92;
   }
 `;
+
 function Nav2(props) {
   const isLogin = () => {
     if (props.isLogin) {
@@ -42,6 +45,7 @@ function Nav2(props) {
       document.location.href = "/admin/login";
     }
   };
+
   return (
     <Nav_Wrap>
       <Nav_Inner>

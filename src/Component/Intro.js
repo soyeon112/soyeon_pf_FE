@@ -68,7 +68,6 @@ function Intro() {
     <>
       <Wrap>
         <HyperLink>
-          {/* <a target="_blank" href="https://github.com/soyeon112"> */}
           <IntroImg
             className="img"
             onClick={() => {

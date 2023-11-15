@@ -178,8 +178,8 @@ function Add() {
             );
             console.log("test add >>> ", res);
             alert("등록되었습니다.");
-            //프로젝트 등록이 완료되면 contetns로 화면이동
-            document.location.href = "/admin"; //projects
+            //프로젝트 등록이 완료되면 /admin 화면이동
+            document.location.href = "/admin"; //관리자 메인페이지
           }
         } catch (err) {
           console.log(err);

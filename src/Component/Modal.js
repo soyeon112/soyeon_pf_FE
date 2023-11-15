@@ -128,13 +128,6 @@ const CodeText = styled.p`
 `;
 
 function Modal({ open, children, onClose, stack }) {
-  // const [toggleState, setToggleState] = useState(1);
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  //   console.log("toggle state : " + toggleState);
-  //   console.log("index : " + index);
-  //   console.log("click click");
-  // };
   const [toggle1, setToggle1] = useState(false);
   const toggleTab = () => {
     setToggle1(!toggle1);

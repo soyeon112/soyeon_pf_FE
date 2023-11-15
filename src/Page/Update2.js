@@ -289,7 +289,7 @@ function Update2({ ...props }) {
             />
           </Item>
         </Inner>
-        <UpdataBtn onClick={handleClick}>Add</UpdataBtn>
+        <UpdataBtn onClick={handleClick}>Update</UpdataBtn>
       </Wrap>
     </>
   );
