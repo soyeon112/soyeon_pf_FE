@@ -10,6 +10,9 @@ import AdminMain from "./Page/AdminMain";
 import Update from "./Page/Update2";
 import Header from "./Component/Header";
 import Add from "./Page/Add";
+
+import { useSelector } from "react-redux";
+import { store } from "./Store/index";
 function App() {
   return (
     <BrowserRouter>
@@ -23,36 +26,49 @@ function Inner() {
   const location = useLocation();
   const locationPath = location.pathname;
 
-  //로그인 여부 확인 (11.05)
   const [isLogin, setIsLogin] = useState(false);
+  //11.25 로그인 리덕스
+  const isAuth = useSelector((state) => state.auth.isAuth);
   useEffect(() => {
-    getSession();
-  }, [locationPath]);
+    console.log("로그인 여부 리덕스", isAuth);
+  }, []);
 
-  const getSession = async () => {
-    try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_API}/login/success`,
-        {
-          withCredentials: true,
-        }
-      );
-      if (res.data.user) {
-        setIsLogin(true);
-      } else {
-        setIsLogin(false);
-      }
-    } catch (err) {
-      console.log(" FE App.js > get sseion", err);
-    }
-  };
-  console.log("is Login", isLogin);
+  //로그인 여부 확인 (11.05)
+
+  // useEffect(() => {
+  //   getSession();
+  // }, [locationPath]);
+
+  // const getSession = async () => {
+  //   try {
+  //     const res = await axios.get(
+  //       `${process.env.REACT_APP_API}/login/success`,
+  //       {
+  //         withCredentials: true,
+  //       }
+  //     );
+  //     if (res.data.user) {
+  //       console.log("로그인 ㅇ");
+  //       // setIsLogin(true);
+  //     } else {
+  //       console.log("로그인 x");
+  //       // setIsLogin(false);
+  //     }
+  //   } catch (err) {
+  //     console.log(" FE App.js > get sseion", err);
+  //   }
+  // };
+  // console.log("is Login", isLogin);
 
   return (
     <>
       <Reset />
       {/* 로그인 페이지에서만 헤더 안보이게, 이외 페이지에서는 헤더 보이게 */}
-      {!(locationPath == "/admin/login") ? <Header isLogin={isLogin} /> : ""}
+      {!(locationPath == "/admin/login") ? (
+        <Header /*isLogin={isLogin}*/ />
+      ) : (
+        ""
+      )}
 
       <Routes>
         <Route path="/" element={<Main />} />

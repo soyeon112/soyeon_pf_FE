@@ -3,8 +3,9 @@ import styled from "styled-components";
 import axios from "axios";
 import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { isElementOfType } from "react-dom/test-utils";
 
+import { useDispatch } from "react-redux";
+import { authAction } from "../Store/auth";
 // 어드민 > 로그인 페이지 입니다.
 
 const Wrap = styled.div`
@@ -32,17 +33,14 @@ const Wrap = styled.div`
   @media (max-width: 1280px) {
     width: 90%;
   }
-  @media (max-width: 850px) {
-    width: 90%;
-    .iconHome {
-      bottom: 15%;
-    }
-  }
-  @media (max-width: 500px) {
+  @media (max-width: 820px) {
     width: 90%;
     .iconHome {
       bottom: 7%;
     }
+  }
+  @media (max-width: 500px) {
+    width: 90%;
   }
 `;
 const LoginBox = styled.div`
@@ -129,6 +127,12 @@ function Login() {
   const [userId, setUserId] = useState("");
   const [pw, setPw] = useState("");
 
+  const dispatch = useDispatch();
+
+  const LoginHandler = () => {
+    dispatch(authAction.login());
+    console.log("디스패치");
+  };
   // 11/08 로그인 여부 확인 코드 수정
   const handleClick = async (e) => {
     if (userId && pw) {
@@ -142,6 +146,7 @@ function Login() {
           .then((res) => {
             console.log(res.status);
             if (res.status == 200) {
+              LoginHandler();
               console.log("로그인 성공");
               document.location.href = "/admin";
             } else {

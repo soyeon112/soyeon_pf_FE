@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Logout from "./Logout";
 import axios from "axios";
 
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
+
 //헤더 > 로고 컴포넌트입니다.
 
 const Header_Wrap = styled.div`
@@ -51,6 +54,9 @@ const Logout_Wrap = styled.div`
   }
 `;
 function Header({ ...props }) {
+  //11.25 로그인 여부 리덕스
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  console.log("header isAuth >> ", isAuth);
   const [session, setSession] = useState(false);
   // useEffect(() => {
   //   const getSession = async () => {
@@ -76,7 +82,7 @@ function Header({ ...props }) {
   // }, []);
 
   return (
-    <>
+    <Fragment>
       <Header_Wrap>
         <Logo_Wrap>
           <Link to="/">
@@ -84,11 +90,11 @@ function Header({ ...props }) {
           </Link>
         </Logo_Wrap>
         {/* 로그인 여부에 따라 로그아웃 버튼 on/off */}
-        {props.isLogin ? <Logout /> : ""}
+        {isAuth && <Logout />}
 
-        <Nav2 isLogin={props.isLogin} />
+        <Nav2 isLogin={isAuth} />
       </Header_Wrap>
-    </>
+    </Fragment>
   );
 }
 export default Header;
