@@ -11,7 +11,6 @@ const Wrap = styled.div`
   margin: 50px auto;
   @media (max-width: 1280px) {
     width: 90%;
-    /* margin: 50px auto 0 20px; */
   }
   @media (max-width: 768px) {
     width: 90%;
@@ -21,7 +20,7 @@ const Wrap = styled.div`
   }
 `;
 
-function Profile(props) {
+function Profile() {
   return (
     <Wrap>
       <Introduce />

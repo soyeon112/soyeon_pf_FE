@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Reset } from "styled-reset";
 import Main from "./Page/Main";
@@ -12,7 +11,6 @@ import Header from "./Component/Header";
 import Add from "./Page/Add";
 
 import { useSelector } from "react-redux";
-import { store } from "./Store/index";
 function App() {
   return (
     <BrowserRouter>

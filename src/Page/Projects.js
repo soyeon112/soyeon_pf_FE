@@ -49,17 +49,12 @@ function Projects() {
           withCredentials: true,
         });
         setProject(res.data);
-        console.log("project", project);
       } catch (err) {
         console.log(err);
       }
     };
     fecthAllProject();
   }, []);
-
-  console.log("??", project);
-  // const skill_item = project[0].skill.split(",");
-  // console.log(skill_item);
 
   return (
     <>

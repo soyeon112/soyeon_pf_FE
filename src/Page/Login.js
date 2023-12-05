@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
 import { authAction } from "../Store/auth";
 // 어드민 > 로그인 페이지 입니다.
@@ -55,14 +54,13 @@ const LoginBox = styled.div`
   border: none;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
-  /* z-index: -2; */
+
   @media (max-width: 1280px) {
     width: 500px;
   }
   @media (max-width: 768px) {
   }
   @media (max-width: 500px) {
-    /* display: none; */
     box-shadow: none;
     width: 95%;
   }
@@ -131,9 +129,8 @@ function Login() {
 
   const LoginHandler = () => {
     dispatch(authAction.login());
-    console.log("디스패치");
   };
-  // 11/08 로그인 여부 확인 코드 수정
+
   const handleClick = async (e) => {
     if (userId && pw) {
       e.preventDefault();
@@ -147,7 +144,6 @@ function Login() {
             console.log(res.status);
             if (res.status == 200) {
               LoginHandler();
-              console.log("로그인 성공");
               document.location.href = "/admin";
             } else {
               alert("틀렸어요. 아이디와 비밀번호를 다시 확인해주세요.");

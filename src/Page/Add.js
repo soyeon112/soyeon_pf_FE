@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -21,18 +20,6 @@ const Wrap = styled.div`
   @media (max-width: 500px) {
     width: 90%;
   }
-  /* 
-  input,
-  textarea {
-    width: 200px;
-    height: 30px;
-    border: #ececec 1px solid;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    color: #e64f92;
-    font-family: "NanumR";
-  } */
 `;
 
 const PageName = styled.span`
@@ -68,14 +55,11 @@ const TextArea = styled.textarea`
 
 const Inner = styled.div`
   width: 100%;
-  /* height: 500px; */
   margin: 30px auto;
-  /* text-align: center; */
 `;
 
 const Item = styled.div`
   width: 100%;
-  /* height: 50px; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;

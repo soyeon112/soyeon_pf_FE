@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AdminContents from "../Component/AdminContents";
-import Logout from "../Component/Logout";
 import { AiOutlinePlus } from "react-icons/ai";
 
 // 어드민 페이지 입니다.
@@ -14,8 +13,6 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  /* background-color: lavender; */
-  /* gap: 30px; */
   @media (max-width: 1280px) {
     width: 90%;
   }
@@ -39,8 +36,6 @@ const Wrap = styled.div`
 
 const ContentsWrap = styled.div`
   width: 100%;
-  /* background-color: pink; */
-  /* height: auto; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -48,7 +43,6 @@ const ContentsWrap = styled.div`
 
 const ContentsInner = styled.div`
   width: 85%;
-  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -65,29 +59,10 @@ const ContentsInner = styled.div`
 
 //관리자페이지 - 메인 화면
 function AdminMain(props) {
-  /*
-  useEffect(() => {
-    //세션 유무에 따른 페이지 이동 
-    const fecthLoginSession = async () => {
-      try {
-        const res = await axios.get(`/session`, { withCredentials: true });
-        console.log("login session res : ", res);
-        if (!res.data["userId"]) {
-          //세션이 없다면 로그인 페이지로 이동
-          document.location.href = "/admin/login";
-        }
-      } catch (err) {
-        console.log("admin session err : ", err);
-      }
-    };
-    fecthLoginSession();
-  }, []);
-*/
-
   const [project, setProject] = useState([]);
 
   useEffect(() => {
-    //세션 유무에 따른 페이지 이동
+    // 세션 유무에 따른 페이지 이동
     // const fecthLoginSession = async () => {
     //   try {
     //     const res = await axios.get(`/session`, { withCredentials: true });
