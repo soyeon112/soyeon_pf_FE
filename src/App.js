@@ -4,11 +4,11 @@ import { Reset } from "styled-reset";
 import Main from "./Page/Main";
 import Profile from "./Page/Profile";
 import Projects from "./Page/Projects";
-import Login from "./Page/Login";
-import AdminMain from "./Page/AdminMain";
-import Update from "./Page/Update2";
-import Header from "./Component/Header";
-import Add from "./Page/Add";
+import Login from "./Page/Login/Login";
+import AdminMain from "./Page/AdminMain/AdminMain";
+import Update from "./Page/Update/Update";
+import Header from "./Component/Header/Header";
+import Add from "./Page/Add/Add";
 
 import { useSelector } from "react-redux";
 function App() {

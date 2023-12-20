@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import "../static/fonts/font.css";
-import Introduce from "../Component/Introduce";
-import Stack from "../Component/Stack";
-import AboutMe from "../Component/AboutMe";
+import Introduce from "../Component/Profile/Intoriduce/Introduce";
+import Stack from "../Component/Profile/Stack/Stack";
+import AboutMe from "../Component/Profile/AboutMe/AboutMe";
 
 // 프로필 페이지 입니다.
 const Wrap = styled.div`

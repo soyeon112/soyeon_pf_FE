@@ -49,9 +49,9 @@ function Nav2(props) {
   return (
     <Nav_Wrap>
       <Nav_Inner>
-        <Link to="/profile">
+        {/* <Link to="/profile">
           <Nav_Item>PROFILE</Nav_Item>
-        </Link>
+        </Link> */}
         <Link to="/projects">
           <Nav_Item>PROJECTS</Nav_Item>
         </Link>

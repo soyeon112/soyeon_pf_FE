@@ -1,62 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import AdminContents from "../Component/AdminContents";
+import AdminContents from "../../Component/AdminContents/AdminContents";
 import { AiOutlinePlus } from "react-icons/ai";
-
+import { AdminWrap, ContentsWrap, ContentsInner } from "./styled";
 // 어드민 페이지 입니다.
-const Wrap = styled.div`
-  width: 990px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  @media (max-width: 1280px) {
-    width: 90%;
-  }
-  @media (max-width: 768px) {
-    width: 90%;
-  }
-  @media (max-width: 500px) {
-    width: 90%;
-  }
-
-  .addBtn {
-    margin-top: 50px;
-    font-size: 50px;
-    color: #d2d2d2;
-    cursor: pointer;
-    &:hover {
-      color: #e64f92;
-    }
-  }
-`;
-
-const ContentsWrap = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const ContentsInner = styled.div`
-  width: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: start;
-
-  @media (max-width: 1280px) {
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-  @media (max-width: 500px) {
-  }
-`;
-
 //관리자페이지 - 메인 화면
 function AdminMain(props) {
   const [project, setProject] = useState([]);
@@ -93,7 +41,7 @@ function AdminMain(props) {
   }, []);
 
   return (
-    <Wrap>
+    <AdminWrap>
       <ContentsWrap>
         <ContentsInner>
           {/* 프로젝트 리스트업 */}
@@ -110,7 +58,7 @@ function AdminMain(props) {
       <Link to="/admin/add">
         <AiOutlinePlus className="addBtn" />
       </Link>
-    </Wrap>
+    </AdminWrap>
   );
 }
 export default AdminMain;

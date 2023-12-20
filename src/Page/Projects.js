@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import styled from "styled-components";
-import Project from "../Component/Project";
+import Project from "../Component//Project/Project";
 import axios from "axios";
 
 // 프로젝트 리스트 페이지입니다.

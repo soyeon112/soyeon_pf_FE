@@ -1,12 +1,7 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
-import "../static/fonts/font.css";
-import memoji from "../static/images/icon_memoji_soyeon_git.png";
-import { GrTextWrap } from "react-icons/gr";
+import memoji from "../../static/images/icon_memoji_soyeon_git.png";
 
-//메인페이지 > 인트로 컴포넌트 입니다.
-
-const Wrap = styled.div`
+export const IntroWrap = styled.div`
   width: 100%;
   height: 60%;
   text-align: center;
@@ -17,7 +12,7 @@ const Wrap = styled.div`
   box-sizing: border-box;
 `;
 
-const IntroText = styled.p`
+export const IntroText = styled.p`
   inline-size: 100%;
   margin: 10px auto 0;
   font-family: "NanumR";
@@ -38,7 +33,7 @@ const fadeout = keyframes`
   }
 `;
 
-const IntroImg = styled.img.attrs({
+export const IntroImg = styled.img.attrs({
   src: `${memoji}`,
 })`
   &:hover {
@@ -47,7 +42,7 @@ const IntroImg = styled.img.attrs({
   }
 `;
 
-const HyperLink = styled.div`
+export const HyperLink = styled.div`
   width: 100%;
   height: 70%;
   position: relative;
@@ -62,27 +57,3 @@ const HyperLink = styled.div`
     position: absolute;
   }
 `;
-function Intro() {
-  const gitLink = "https://github.com/soyeon112";
-  return (
-    <>
-      <Wrap>
-        <HyperLink>
-          <IntroImg
-            className="img"
-            onClick={() => {
-              window.open(gitLink);
-            }}
-          />
-        </HyperLink>
-        <IntroText>
-          Hi-! <br />
-          My name is soyeon kim.
-          <br />
-          Nice to meet you-!🙂
-        </IntroText>
-      </Wrap>
-    </>
-  );
-}
-export default Intro;

@@ -1,58 +1,13 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import logo from "../static/images/logo.png";
-import Nav2 from "./Nav2";
+import Nav from "../Nav/Nav";
 import { Link } from "react-router-dom";
-import Logout from "./Logout";
+import Logout from "../Logout";
 import axios from "axios";
-
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
-
+import { HeaderWrap, LogoWrap, Logo, LogoutWrap } from "./styled";
 //헤더 > 로고 컴포넌트입니다.
 
-const Header_Wrap = styled.div`
-  width: 100%;
-  height: 100px;
-  margin-top: 15px;
-  /* background-color: lavender; */
-  font-family: "Rosehot";
-  position: relative;
-`;
-const Logo_Wrap = styled.div`
-  width: 100%;
-  /* background-color: lavenderblush; */
-  text-align: center;
-  margin: 0 auto;
-`;
-const Logo = styled.div`
-  width: 160px;
-  height: 100px;
-  margin: 0 auto;
-  background-image: url(${logo});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-`;
-const Logout_Wrap = styled.div`
-  width: 100%;
-
-  height: 100%;
-  background-color: lightsalmon;
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 10px;
-  right: 100px;
-
-  @media (max-width: 1280px) {
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 500px) {
-    right: 15px;
-  }
-`;
 function Header({ ...props }) {
   //11.25 로그인 여부 리덕스
   const isAuth = useSelector((state) => state.auth.isAuth);
@@ -83,17 +38,17 @@ function Header({ ...props }) {
 
   return (
     <Fragment>
-      <Header_Wrap>
-        <Logo_Wrap>
+      <HeaderWrap>
+        <LogoWrap>
           <Link to="/">
             <Logo />
           </Link>
-        </Logo_Wrap>
+        </LogoWrap>
         {/* 로그인 여부에 따라 로그아웃 버튼 on/off */}
         {isAuth && <Logout />}
 
-        <Nav2 isLogin={isAuth} />
-      </Header_Wrap>
+        <Nav isLogin={isAuth} />
+      </HeaderWrap>
     </Fragment>
   );
 }
