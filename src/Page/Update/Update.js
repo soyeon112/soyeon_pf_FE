@@ -94,7 +94,7 @@ function Update2({ ...props }) {
             );
             alert("수정되었습니다.");
             //프로젝트 등록이 완료되면 contetns로 화면이동
-            document.location.href = "/projects";
+            document.location.href = "/";
           }
         } catch (err) {
           console.log(err);

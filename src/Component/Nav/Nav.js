@@ -52,7 +52,8 @@ function Nav2(props) {
         {/* <Link to="/profile">
           <Nav_Item>PROFILE</Nav_Item>
         </Link> */}
-        <Link to="/projects">
+        {/* <Link to="/projects"> */}
+        <Link to="/">
           <Nav_Item>PROJECTS</Nav_Item>
         </Link>
         <Link>

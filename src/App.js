@@ -69,9 +69,10 @@ function Inner() {
       )}
 
       <Routes>
-        <Route path="/" element={<Main />} />
+        {/* <Route path="/" element={<Main />} /> */}
+        <Route path="/" element={<Projects />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/projects" element={<Projects />} />
+        {/* <Route path="/projects" element={<Projects />} /> */}
         <Route path="/admin" element={<AdminMain />} />
         <Route path="/admin/add" element={<Add />} />
         <Route path="/admin/update/:id" element={<Update />} />
