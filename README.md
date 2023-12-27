@@ -17,14 +17,6 @@
 
 [^1]: 🔗 : [https://soyeon112.github.io/portfolio_sy/](https://soyeon112.github.io/portfolio_sy/)
 
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/soyeon112/portfolio_sy/assets/29302463/f60b4441-741e-4dcc-a5f5-138979f4ab44"/>
-    </td>
-  </tr>
-</table>
-
 🔍 스크린샷
 
 <table>
