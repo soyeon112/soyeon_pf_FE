@@ -4,7 +4,7 @@ import {
   ProjectCompoWrap,
   ThumbDiv,
   Thumb,
-  TextDiv,
+  TextWrap,
   Title,
   SubText,
   StackBottomDiv,
@@ -33,11 +33,13 @@ function Project(props) {
           alt="project thumbnail"
         />
       </ThumbDiv>
-      <TextDiv>
-        <Title>{props.title}</Title>
-        <SubText>&#45; &#32;{props.sub}</SubText>
-        <SubText>&#45; &#32;{props.cate}</SubText>
-        <SubText>&#45; &#32;{props.date}</SubText>
+      <TextWrap>
+        <div>
+          <Title>{props.title}</Title>
+          <SubText>&#45; &#32;{props.sub}</SubText>
+          <SubText>&#45; &#32;{props.cate}</SubText>
+          <SubText>&#45; &#32;{props.date}</SubText>
+        </div>
         <StackBottomDiv>
           <StackDiv>
             <Stacks>{props.stack}</Stacks>
@@ -61,7 +63,7 @@ function Project(props) {
           onClose={() => setIsOpen(false)}
           id={props.id}
         ></Modal>
-      </TextDiv>
+      </TextWrap>
     </ProjectCompoWrap>
   );
 }
