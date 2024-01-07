@@ -4,6 +4,8 @@ import logo from "../../static/images/logo.png";
 export const HeaderWrap = styled.div`
   width: 100%;
   height: 100px;
+  /* display: flex;
+  flex-direction: row; */
   margin-top: 15px;
   /* background-color: lavender; */
   font-family: "Rosehot";

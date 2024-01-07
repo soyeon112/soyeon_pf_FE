@@ -28,7 +28,7 @@ const Nav_Item = styled.button`
   border: none;
   background-color: #fff;
   font-family: "Rosehot";
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #000;
   &:hover {
     color: #e64f92;
@@ -53,7 +53,7 @@ function Nav2(props) {
           <Nav_Item>PROFILE</Nav_Item>
         </Link> */}
         {/* <Link to="/projects"> */}
-        <Link to="/">
+        <Link to="/projects">
           <Nav_Item>PROJECTS</Nav_Item>
         </Link>
         <Link>

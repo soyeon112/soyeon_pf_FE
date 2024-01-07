@@ -1,59 +1,125 @@
 import styled, { keyframes } from "styled-components";
-import memoji from "../../static/images/icon_memoji_soyeon_git.png";
+
+export const messageAni = keyframes`
+from {
+    opacity:0;
+    transform:translateX(-100px);
+}
+to{
+   opacity:1; 
+   transform:translateX(0px);
+}`;
+export const messageWrapMoveAni = keyframes`
+from {
+   
+}
+to{
+    width:50%;
+  /* transform:translateX(-100px); */
+}`;
 
 export const IntroWrap = styled.div`
+  font-family: "NanumR";
   width: 100%;
-  height: 60%;
-  text-align: center;
+  height: 80vh;
+  padding: 15px 55px;
+  margin-top: 100px;
+  box-sizing: border-box;
+  @media (max-width: 820px) {
+  }
+  @media (max-width: 500px) {
+    padding: 15px;
+  }
+`;
+export const MessageWrap = styled.div`
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 20px 0;
-  box-sizing: border-box;
-`;
+  justify-content: start;
 
-export const IntroText = styled.p`
-  inline-size: 100%;
-  margin: 10px auto 0;
-  font-family: "NanumR";
-  font-size: 1rem;
-  color: #000c75;
-  line-height: 30px;
-`;
-
-const fadeout = keyframes`
-  0% {
-    opacity:1;
+  .message:nth-of-type(2) {
+    animation-delay: 0.5s;
   }
-  50% {
-    opacity: 0.3;
+  .message:nth-of-type(3) {
+    animation-delay: 1s;
   }
-  100% {
-    opacity: 1;
+  .message:nth-of-type(4) {
+    animation-delay: 1.5s;
+  }
+  .message:nth-of-type(5) {
+    animation-delay: 2s;
+  }
+  .message:nth-of-type(6) {
+    animation-delay: 2.5s;
+  }
+  .message:nth-of-type(7) {
+    animation-delay: 3s;
   }
 `;
 
-export const IntroImg = styled.img.attrs({
-  src: `${memoji}`,
-})`
-  &:hover {
-    cursor: pointer;
-    animation: ${fadeout} 1s ease-in-out forwards;
-  }
-`;
-
-export const HyperLink = styled.div`
+export const MessageInner = styled.div`
   width: 100%;
-  height: 70%;
-  position: relative;
+  height: 120px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  .img {
-    height: 100%;
-    left: auto;
-    object-fit: cover;
-    overflow: hidden;
-    position: absolute;
+  align-items: center;
+  opacity: 0;
+  animation: ${messageAni} 0.5s;
+  animation-fill-mode: forwards;
+  gap: 5px;
+  position: relative;
+  @media (max-width: 820px) {
+    height: 100px;
+  }
+  @media (max-width: 500px) {
+    height: 60px;
+  }
+  @media (max-width: 300px) {
+    height: 80px;
+  }
+`;
+export const Message = styled.div`
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: ${(props) => props.left}px;
+  right: ${(props) => props.right}px;
+  top: ${(props) => props.top}px;
+  bottom: ${(props) => props.bottom}px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  border-radius: 150px;
+  /* line-height: 60px; */
+  background-color: ${(props) => props.bgColor};
+  color: ${(props) => props.fontColor};
+
+  @media (max-width: 820px) {
+    font-size: 1rem;
+    /* line-height: 50px; */
+  }
+  @media (max-width: 500px) {
+    padding: 15px 25px;
+    font-size: 0.8rem;
+    line-height: 20px;
+  }
+`;
+
+export const InnerLeft = styled.div`
+  width: 100%;
+  height: 100%;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @media (min-width: 1280px) {
+    animation: ${messageWrapMoveAni} 1s 4s;
+    animation-fill-mode: forwards;
+  }
+  @media (max-width: 820px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
   }
 `;
