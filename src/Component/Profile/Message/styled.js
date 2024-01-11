@@ -32,7 +32,7 @@ export const MessageInner = styled.div`
   opacity: 0;
   animation: ${messageAni} 0.5s;
   animation-fill-mode: forwards;
-
+  font-family: "nanumR";
   position: relative;
   @media (max-width: 820px) {
     height: 70px;
