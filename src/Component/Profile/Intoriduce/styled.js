@@ -1,76 +1,113 @@
 import styled from "styled-components";
 import memoji from "../../../static/images/icon_memoji_soyeon.png";
+import profileImg from "../../../static/images/profileImg3.png";
 
 export const IntroduceDiv = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
+  height: 700px;
   display: flex;
-  padding-top: 30px;
+  justify-content: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 50px auto;
+  box-sizing: border-box;
+
   @media (max-width: 1280px) {
     display: flex;
   }
-  @media (max-width: 768px) {
-    width: 60%; /*60*/
-    flex-direction: wrap;
-    flex-direction: column;
+  @media (max-width: 820px) {
+    width: 100%;
   }
   @media (max-width: 500px) {
-    width: 80%; /*60% */
-    display: flex;
     flex-direction: column;
+    margin: 20px auto;
   }
 `;
 
+export const PhotoWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${profileImg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 17px;
+
+  @media (max-width: 500px) {
+    background-position: top;
+  }
+`;
 export const ProfileImg = styled.img.attrs({
-  src: `${memoji}`,
+  src: `${profileImg}`,
 })`
-  width: 45%;
-  height: 45%;
+  /* width: 100%; */
+  /* width: 45%; */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+  @media (max-width: 820px) {
+    /* height: 100%; */
+  }
+  @media (max-width: 500px) {
+    /* width: 100%; */
   }
 `;
+export const InnerWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 820px) {
+  }
+  @media (max-width: 500px) {
+    width: 95%;
+    height: auto;
+    margin: 10px auto;
+  }
+`;
+
 export const TextDiv = styled.div`
-  width: 60%;
-  margin: 12px 0 0 0;
-  @media (max-width: 768px) {
-    width: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 820px) {
+    width: 100%;
     margin: 0 auto;
   }
   @media (max-width: 500px) {
-    width: 100%;
-    margin: 0 auto;
   }
 `;
 export const IntroduceTextBold = styled.p`
   white-space: pre-wrap;
-  margin: 25px 0 0 20px;
   font-family: "NanumEB";
-  font-size: 14px;
+  font-size: 1rem;
+  color: #047efe;
   line-height: 25px;
-  @media (max-width: 768px) {
-    margin: 25px 0 0 10px;
+  @media (max-width: 820px) {
   }
   @media (max-width: 500px) {
-    margin: 25px 0 0 13px;
+    font-size: 0.8rem;
   }
 `;
 export const IntroduceTextR = styled.p`
   white-space: pre-wrap;
-  margin: 10px 0 0 20px;
   line-height: 25px;
   font-family: "NanumR";
-  font-size: 14px;
-  @media (max-width: 768px) {
+  font-size: 0.9rem;
+  @media (max-width: 820px) {
     white-space: pre-wrap;
-    margin: 10px 0 0 13px;
-    font-size: 13px;
   }
   @media (max-width: 500px) {
     white-space: pre-wrap;
-    margin: 10px 0 0 13px;
-    font-size: 13px;
+    font-size: 0.75rem;
   }
 `;

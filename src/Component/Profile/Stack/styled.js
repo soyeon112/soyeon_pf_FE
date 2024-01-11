@@ -1,105 +1,54 @@
 import styled from "styled-components";
-import iconHtml from "../../../static/images/icon_html.png";
-import iconCss from "../../../static/images/icon_css.png";
-import iconJs from "../../../static/images/icon_javascript.png";
-import iconPs from "../../../static/images/icon_photoshop.png";
-import iconReact from "../../../static/images/icon_react.png";
-import iconNode from "../../../static/images/icon_nodejs.png";
-import iconBlank from "../../../static/images/icon_blank.png";
 
 export const StackWrap = styled.div`
-  width: 80%;
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
   margin: 50px auto 0 auto;
-  font-family: "NanumEB";
-  font-size: 16px;
-  padding: 15px;
+`;
 
-  /* @media (max-width: 1280px) {
-    width: 60%;
-  } */
-
-  @media (max-width: 768px) {
-    width: 80%;
+export const StackInnerWrap = styled.div`
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto;
+  box-sizing: border-box;
+  gap: 30px;
+  font-size: 0.8rem;
+  margin-top: 40px;
+  div {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid #eee; */
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #097efe;
   }
 
+  @media (max-width: 820px) {
+  }
   @media (max-width: 500px) {
-    width: 80%;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    gap: 15px;
+    div {
+      width: 55px;
+      height: 55px;
+      font-size: 2rem;
+    }
   }
 `;
 
-export const Stacks = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-export const StackItem = styled.div`
-  width: 124px;
-  margin: 15px auto 0;
-  font-family: "NanumR";
-  font-size: 13px;
-  text-align: center;
-`;
-export const ImgHtml = styled.img.attrs({
-  src: `${iconHtml}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
+export const StackTitle = styled.p`
+  font-family: "nanumB";
+  font-size: 1rem;
+  @media (max-width: 820px) {
   }
-`;
-export const ImgCss = styled.img.attrs({
-  src: `${iconCss}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const ImgJs = styled.img.attrs({
-  src: `${iconJs}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const ImgPs = styled.img.attrs({
-  src: `${iconPs}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const ImgReact = styled.img.attrs({
-  src: `${iconReact}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const ImgNode = styled.img.attrs({
-  src: `${iconNode}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const ImgBlank = styled.img.attrs({
-  src: `${iconBlank}`,
-})`
-  width: 120px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
+  @media (max-width: 500px) {
+    font-size: 0.8rem;
   }
 `;

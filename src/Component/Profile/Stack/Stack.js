@@ -1,56 +1,49 @@
 import React from "react";
+import { StackWrap, StackTitle, StackInnerWrap } from "./styled";
+import { FaNodeJs, FaGithub } from "react-icons/fa";
+
 import {
-  StackWrap,
-  Stacks,
-  StackItem,
-  ImgHtml,
-  ImgCss,
-  ImgJs,
-  ImgPs,
-  ImgReact,
-  ImgNode,
-  ImgBlank,
-} from "./styled";
-//프로필 페이지 > 기술 스택 컴포넌트 입니다.
-function Stack() {
+  SiReact,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiMysql,
+  SiFigma,
+  SiAdobephotoshop,
+} from "react-icons/si";
+export default function Stack2() {
   return (
     <StackWrap>
-      <span>🔨 기술 스택</span>
-      <Stacks>
-        <StackItem>
-          <ImgHtml />
-          <span>HTML</span>
-        </StackItem>
-        <StackItem>
-          <ImgCss />
-          <span>CSS</span>
-        </StackItem>
-        <StackItem>
-          <ImgJs />
-          <span>JavaScript</span>
-        </StackItem>
-        <StackItem>
-          <ImgReact />
-          <span>React</span>
-        </StackItem>
-        <StackItem>
-          <ImgNode />
-          <span>Node.js</span>
-        </StackItem>
-        <StackItem>
-          <ImgPs />
-          <span>Photoshop</span>
-        </StackItem>
-        {/* <StackItem>
-          <ImgBlank />
-          <span> </span>
-        </StackItem>
-        <StackItem>
-          <ImgBlank />
-          <span> </span>
-        </StackItem> */}
-      </Stacks>
+      <StackTitle>🔧 기술 스택</StackTitle>
+      <StackInnerWrap>
+        <div>
+          <SiReact />
+        </div>
+        <div>
+          <SiHtml5 />
+        </div>
+        <div>
+          <SiCss3 />
+        </div>
+        <div>
+          <SiJavascript />
+        </div>
+        <div>
+          <SiMysql />
+        </div>
+        <div>
+          <FaNodeJs />
+        </div>
+        <div>
+          <FaGithub />
+        </div>
+        <div>
+          <SiFigma />
+        </div>
+        <div>
+          <SiAdobephotoshop />
+        </div>
+      </StackInnerWrap>
     </StackWrap>
   );
 }
-export default Stack;

@@ -28,7 +28,8 @@ const Nav_Item = styled.button`
   border: none;
   background-color: #fff;
   font-family: "Rosehot";
-  font-size: 1rem;
+  /* font-family: "nanumR";/ */
+  font-size: 0.9rem;
   color: #000;
   &:hover {
     color: #e64f92;
@@ -49,11 +50,10 @@ function Nav2(props) {
   return (
     <Nav_Wrap>
       <Nav_Inner>
-        {/* <Link to="/profile">
+        <Link to="/profile">
           <Nav_Item>PROFILE</Nav_Item>
-        </Link> */}
-        {/* <Link to="/projects"> */}
-        <Link to="/projects">
+        </Link>
+        <Link to="/">
           <Nav_Item>PROJECTS</Nav_Item>
         </Link>
         <Link>

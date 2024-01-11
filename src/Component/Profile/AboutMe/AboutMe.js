@@ -5,15 +5,12 @@ import { AboutMeWrap, Title, AboutMeInner } from "./styled";
 function AboutMe() {
   return (
     <AboutMeWrap>
-      <Title>💌 About Me</Title>
+      {/* <Title>💌 About Me</Title> */}
       <AboutMeInner>
-        <p>이름 : 김소연</p>
-        <p>생년월일 : 1995.11.12</p>
-        <p>E-mail : kimsoyeon1112@gmail.com</p>
-        <p>
-          교육 : KOSTA Node.js기반 웹 Full-Stack 개발자 양성과정 교육 수료
-          (2022.03.10 - 2022.07.26)
-        </p>
+        <p>👩🏻 김소연</p>
+        <p>📅 1995-11-12</p>
+        <p>📩 kimsoyeon1112@gmail.com</p>
+        <p>🏠 경기도 수원시 </p>
       </AboutMeInner>
     </AboutMeWrap>
   );
