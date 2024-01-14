@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import memoji from "../../../static/images/icon_memoji_soyeon.png";
 import profileImg from "../../../static/images/profileImg3.png";
 
 export const IntroduceDiv = styled.div`

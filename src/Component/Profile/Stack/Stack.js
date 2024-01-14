@@ -10,6 +10,7 @@ import {
   SiMysql,
   SiFigma,
   SiAdobephotoshop,
+  SiRedux,
 } from "react-icons/si";
 export default function Stack2() {
   return (
@@ -18,6 +19,9 @@ export default function Stack2() {
       <StackInnerWrap>
         <div>
           <SiReact />
+        </div>
+        <div>
+          <SiRedux />
         </div>
         <div>
           <SiHtml5 />

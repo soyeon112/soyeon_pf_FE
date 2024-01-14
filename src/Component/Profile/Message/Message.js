@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  MessageWrap,
-  PhoneWrap,
-  Message,
-  MessageInner,
-  InnerWrap,
-} from "./styled";
+import { MessageWrap, Message, MessageInner, InnerWrap } from "./styled";
 
 function IntroMessage() {
   const leftMessage = `#e9e9eb`;

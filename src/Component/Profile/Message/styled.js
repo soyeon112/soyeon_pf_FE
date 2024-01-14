@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import PhoneMockup from "../../../static/images/phone_mockup.png";
+
 export const messageAni = keyframes`
 from {
     opacity:0;
@@ -35,10 +35,10 @@ export const MessageInner = styled.div`
   font-family: "nanumR";
   position: relative;
   @media (max-width: 820px) {
-    height: 70px;
+    /* height: 70px; */
   }
   @media (max-width: 500px) {
-    height: 60px;
+    /* height: 60px; */
   }
   @media (max-width: 300px) {
     height: 80px;
@@ -104,15 +104,4 @@ export const InnerWrap = styled.div`
   @media (max-width: 500px) {
     width: 100%;
   }
-`;
-
-export const PhoneWrap = styled.div`
-  width: 100%;
-  height: 550px;
-  border: 1px solid red;
-  background-image: url(${PhoneMockup});
-  background-size: 150%;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
 `;

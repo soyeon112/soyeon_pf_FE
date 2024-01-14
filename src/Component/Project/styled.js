@@ -13,7 +13,7 @@ export const ProjectCompoWrap = styled.div`
 
   @media (max-width: 820px) {
     padding: 0px;
-    width: 80%;
+    width: 90%; //80%
     height: auto;
     flex-direction: column;
     margin: 40px auto;

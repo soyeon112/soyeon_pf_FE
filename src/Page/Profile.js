@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "../static/fonts/font.css";
-import Introduce from "../Component/Profile/Intoriduce/Introduce";
+import Introduce from "../Component/Profile/Intorduce/Introduce";
 import Stack from "../Component/Profile/Stack/Stack";
 import AboutMe from "../Component/Profile/AboutMe/AboutMe";
 import Message from "../Component/Profile/Message/Message";
