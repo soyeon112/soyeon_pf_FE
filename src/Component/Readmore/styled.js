@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 /*modal bg*/
 export const ModalPopup = styled.div`

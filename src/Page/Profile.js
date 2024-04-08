@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import "../static/fonts/font.css";
 import Introduce from "../Component/Profile/Intorduce/Introduce";
 import Stack from "../Component/Profile/Stack/Stack";
@@ -8,7 +8,7 @@ import Message from "../Component/Profile/Message/Message";
 // 프로필 페이지 입니다.
 const Wrap = styled.div`
   width: 990px;
-  margin: 80px auto;
+  margin: 20px auto;
   @media (max-width: 1280px) {
     width: 90%;
   }

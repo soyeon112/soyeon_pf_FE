@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Project from "../Component//Project/Project";
 import axios from "axios";
 
@@ -7,7 +7,8 @@ import axios from "axios";
 // db에 저장되어있는 프로젝트들이 리스트업 됩니다.
 const Wrap = styled.div`
   width: 990px;
-  margin: 50px auto;
+  /* margin: 20px auto; //50px auto */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

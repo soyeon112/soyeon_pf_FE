@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Modal from "../Readmore/Readmore";
 import {
   ProjectCompoWrap,
@@ -25,6 +26,9 @@ function Project(props) {
       : (document.body.style.overflow = "unset");
   }
 
+  const clickDetail = () => {
+    console.log(props.id);
+  };
   return (
     <ProjectCompoWrap>
       <ThumbDiv>
@@ -48,7 +52,10 @@ function Project(props) {
             <a target="_blank" href={props.view}>
               <Btns>View 👀</Btns>
             </a>
-            <Btns onClick={() => setIsOpen(true)}>Read More 💻</Btns>
+            {/* <Btns onClick={() => setIsOpen(true)}>Read More 💻</Btns> */}
+            <Link to={`/projectDetail/${props.id}`}>
+              <Btns>상세보기 💻</Btns>
+            </Link>
             {props.git ? (
               <a target="_blank" href={props.git}>
                 <Btns>Git 💾</Btns>

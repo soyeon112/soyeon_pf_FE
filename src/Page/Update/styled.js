@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 // 어드민 > 프로젝트 수정 페이지 입니다.
 export const Wrap = styled.div`

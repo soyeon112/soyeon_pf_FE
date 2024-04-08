@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const ProjectCompoWrap = styled.div`
   display: flex;
@@ -82,10 +82,10 @@ export const Title = styled.p`
     font-size: 0.9em;
   }
   @media (max-width: 820px) {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
   }
   @media (max-width: 500px) {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
   }
 `;
 export const SubText = styled.p`
@@ -96,10 +96,10 @@ export const SubText = styled.p`
     font-size: 0.8em;
   }
   @media (max-width: 820px) {
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
   }
   @media (max-width: 500px) {
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
   }
 `;
 export const StackBottomDiv = styled.div`
@@ -122,7 +122,7 @@ export const Stacks = styled.span`
   line-height: 2.5;
 
   @media (max-width: 1280px) {
-    font-size: 0.7em;
+    font-size: 0.75em;
   }
   @media (max-width: 820px) {
   }
@@ -133,7 +133,6 @@ export const Stacks = styled.span`
 export const BtnDiv = styled.div`
   flex-direction: row;
   margin-top: 10px;
-
   a {
     text-decoration: none;
   }
@@ -141,6 +140,7 @@ export const BtnDiv = styled.div`
 
 export const Btns = styled(Stacks)`
   color: #e64f92;
+  font-size: 0.75em;
   &:hover {
     cursor: pointer;
     background-color: #ffeff5;

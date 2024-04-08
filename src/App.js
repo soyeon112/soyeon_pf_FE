@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Reset } from "styled-reset";
+import styled from "styled-components/macro";
+
 import Main from "./Page/Main";
 import Profile from "./Page/Profile";
 import Projects from "./Page/Projects";
@@ -9,14 +11,11 @@ import AdminMain from "./Page/AdminMain/AdminMain";
 import Update from "./Page/Update/Update";
 import Header from "./Component/Header/Header";
 import Add from "./Page/Add/Add";
+import Detail from "./Page/DetailProject/Detail";
 
 import { useSelector } from "react-redux";
 function App() {
-  return (
-    <BrowserRouter>
-      <Inner />
-    </BrowserRouter>
-  );
+  return <Inner />;
 }
 
 function Inner() {
@@ -77,6 +76,8 @@ function Inner() {
         <Route path="/admin/add" element={<Add />} />
         <Route path="/admin/update/:id" element={<Update />} />
         <Route path="/admin/login" element={<Login />} />
+        {/* 0406 디테일페이지 추가 */}
+        <Route path="/projectDetail/:id" element={<Detail />} />
       </Routes>
     </>
   );

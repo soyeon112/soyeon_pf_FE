@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Route } from "react-router-dom";
@@ -7,32 +7,47 @@ import { Route } from "react-router-dom";
 //헤더 > 네비게이션 입니다. (프로필, 프로젝트, 어드민)
 
 const Nav_Wrap = styled.div`
-  width: 50%;
-  height: 50px;
-  margin: 15px auto 0;
-
-  /* background-color: lemonchiffon; */
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: lavender; */
 `;
 
 const Nav_Inner = styled.div`
   width: 100%;
   height: 100%;
-  /* background-color: lavender; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  gap: 200px;
+  @media (max-width: 1280px) {
+    gap: 100px;
+  }
+  @media (max-width: 768px) {
+    gap: 80px;
+  }
+  @media (max-width: 500px) {
+    gap: 30px;
+  }
 `;
 
 const Nav_Item = styled.button`
   cursor: pointer;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   font-family: "Rosehot";
-  /* font-family: "nanumR";/ */
-  font-size: 0.9rem;
+  /* font-family: "nanumR"; */
+  font-size: 1rem;
   color: #000;
   &:hover {
     color: #e64f92;
+  }
+  @media (max-width: 500px) {
+    font-size: 0.9rem;
+    font-weight: bold;
   }
 `;
 
