@@ -11,7 +11,6 @@ import { HeaderWrap, LogoWrap, Logo, LogoutWrap } from "./styled";
 function Header({ ...props }) {
   //11.25 로그인 여부 리덕스
   const isAuth = useSelector((state) => state.auth.isAuth);
-  console.log("header isAuth >> ", isAuth);
   const [session, setSession] = useState(false);
   // useEffect(() => {
   //   const getSession = async () => {

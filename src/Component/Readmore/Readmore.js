@@ -25,7 +25,6 @@ function Readmore({ ...props }) {
 
   useEffect(() => {
     const fecthProjectText = async () => {
-      console.log("readmore page open");
       try {
         const res = await axios.get(
           `${process.env.REACT_APP_API}/getTexts/` + projectId,

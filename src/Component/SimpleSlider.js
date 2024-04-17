@@ -18,6 +18,7 @@ export default function SimpleSlider({ ...props }) {
     slidesToScroll: 1,
     arrows: false,
   };
+  console.log(props.screenshot);
   return (
     <Slider {...settings}>
       <SliderWrap>{props.screenshot}</SliderWrap>

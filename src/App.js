@@ -26,9 +26,6 @@ function Inner() {
   const [isLogin, setIsLogin] = useState(false);
   //11.25 로그인 리덕스
   const isAuth = useSelector((state) => state.auth.isAuth);
-  useEffect(() => {
-    console.log("로그인 여부 리덕스", isAuth);
-  }, []);
 
   //로그인 여부 확인 (11.05)
 
@@ -66,7 +63,6 @@ function Inner() {
       ) : (
         ""
       )}
-
       <Routes>
         {/* <Route path="/" element={<Main />} /> */}
         <Route path="/" element={<Projects />} />

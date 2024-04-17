@@ -40,10 +40,7 @@ function Detail({ ...props }) {
         );
         setProject(res.data[0]);
         console.log(res);
-        for (let i = 1; i < 6; i++) {
-          console.log(`${project.img + { i }}`);
-          setScreenshots(`${project.img + { i }}`);
-        }
+        imgs();
       } catch (err) {
         console.log("detail page error > ", err);
       }
@@ -52,7 +49,10 @@ function Detail({ ...props }) {
   }, []);
 
   const stack = project.skill ? project.skill.split(",") : "";
-  console.log("??", screenshots);
+  // 스크린샷 이미지 추출
+  const imgs = () => {
+    setScreenshots([...screenshots, project.img1]);
+  };
   return (
     <DetailWrap>
       <DetailHeader>
