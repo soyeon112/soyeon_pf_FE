@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import Slider from "../../Component/SimpleSlider";
+import SimpleSlider from "../../Component/Readmore/SimpleSlider";
 import {
   DetailWrap,
   DetailHeader,
@@ -29,30 +29,30 @@ function Detail({ ...props }) {
   const location = useLocation();
   const projectId = location.pathname.split("/")[2];
   const [project, setProject] = useState({});
-  const [screenshots, setScreenshots] = useState([]);
+  const [sliderImgs, setSliderImgs] = useState([]);
+
+  const imgArr = new Array();
   useEffect(() => {
     const fecthProjectTexts = async () => {
-      console.log("detail page facth..ing");
       try {
         const res = await axios.get(
           `${process.env.REACT_APP_API}/getTexts/` + projectId,
           { withCredentials: true }
         );
         setProject(res.data[0]);
-        console.log(res);
-        imgs();
+        imgArr.push("1");
+        imgArr.push("2");
+        imgArr.push("3");
       } catch (err) {
         console.log("detail page error > ", err);
       }
     };
     fecthProjectTexts();
-  }, []);
+  }, [projectId]);
 
   const stack = project.skill ? project.skill.split(",") : "";
   // 스크린샷 이미지 추출
-  const imgs = () => {
-    setScreenshots([...screenshots, project.img1]);
-  };
+
   return (
     <DetailWrap>
       <DetailHeader>
@@ -70,13 +70,12 @@ function Detail({ ...props }) {
         <MiddleInner>
           <StackBox>{stack && stack.map((it) => <Stack>{it}</Stack>)}</StackBox>
           <IntroText>{project.introduction}</IntroText>
-
           <ReadmoreText>{project.readmore}</ReadmoreText>
         </MiddleInner>
       </DetailMiddle>
       <DetailBottom>
         <BottomInner>
-          <Slider screenshot={screenshots} />
+          <SimpleSlider sliderImgArr={imgArr} />
         </BottomInner>
       </DetailBottom>
     </DetailWrap>

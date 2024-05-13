@@ -191,7 +191,8 @@ export const DetailBottom = styled.div`
   box-sizing: border-box;
   @media (max-width: 500px) {
     width: 100%;
-    padding: 5px;
+    height: auto;
+    padding: 5px 5px 60px;
   }
 `;
 
