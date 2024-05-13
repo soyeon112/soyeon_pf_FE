@@ -13,6 +13,8 @@ import Header from "./Component/Header/Header";
 import Add from "./Page/Add/Add";
 import Detail from "./Page/DetailProject/Detail";
 
+import TopButton from "./Component/TopButton";
+
 import { useSelector } from "react-redux";
 function App() {
   return <Inner />;
@@ -63,6 +65,8 @@ function Inner() {
       ) : (
         ""
       )}
+
+      <TopButton />
       <Routes>
         {/* <Route path="/" element={<Main />} /> */}
         <Route path="/" element={<Projects />} />

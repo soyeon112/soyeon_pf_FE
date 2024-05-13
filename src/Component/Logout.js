@@ -10,7 +10,8 @@ import { authAction } from "../Store/auth";
 
 const LogoutBtn = styled.button`
   position: absolute;
-  right: 100px;
+  /* right: 100px; */
+  right: 1%;
   top: 15px;
   width: 80px;
   height: 30px;
