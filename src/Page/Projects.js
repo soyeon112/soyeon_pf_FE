@@ -50,6 +50,7 @@ function Projects() {
           withCredentials: true,
         });
         setProject(res.data);
+        console.log("porject", project);
       } catch (err) {
         console.log(err);
       }
