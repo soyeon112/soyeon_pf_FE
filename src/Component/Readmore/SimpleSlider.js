@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 const SliderWrap = styled.div`
   width: 100%;
   height: 500px;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 6px;
   overflow: hidden;
 
